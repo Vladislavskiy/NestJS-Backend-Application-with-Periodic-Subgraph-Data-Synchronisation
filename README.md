@@ -1,0 +1,1 @@
+# NestJS-Backend-Application-with-Periodic-Subgraph-Data-Synchronisation
