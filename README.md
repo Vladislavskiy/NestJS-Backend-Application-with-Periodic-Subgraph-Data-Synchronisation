@@ -5,7 +5,7 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center"><a href="http://nodejs.org" target="_blank">Nest.js</a> test app with periodic subgraph data sync</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
@@ -28,8 +28,26 @@
 
 ## Installation
 
+Clone the repository
+```bash
+$ git clone git@github.com:Vladislavskiy/NestJS-Backend-Application-with-Periodic-Subgraph-Data-Synchronisation.git
+```
+
+Switch to the repo folder
+```bash
+$ cd NestJS-Backend-Application-with-Periodic-Subgraph-Data-Synchronisation
+```
+
+Install depenpencies
 ```bash
 $ npm install
+```
+
+start Postgres server and change .env DATABASE_URL to yours
+
+generate SQL migration files and run them against the database
+```bash
+$ npx prisma migrate dev --name init
 ```
 
 ## Running the app
@@ -37,12 +55,6 @@ $ npm install
 ```bash
 # development
 $ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 ## Test
@@ -50,12 +62,6 @@ $ npm run start:prod
 ```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Support
