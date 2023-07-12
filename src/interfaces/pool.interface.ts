@@ -1,13 +1,13 @@
-import { Prisma } from '@prisma/client';
+import { type Prisma } from '@prisma/client'
 
 export interface IPoolResponse {
-    id: string;
-    token0: {
-      id: string;
-    };
-    token1: {
-      id: string;
-    };  
+  id: string
+  token0: {
+    id: string
+  }
+  token1: {
+    id: string
+  }
 };
 
-export type IPool = Prisma.PoolCreateInput;
+export type IPool = Prisma.PoolCreateInput
