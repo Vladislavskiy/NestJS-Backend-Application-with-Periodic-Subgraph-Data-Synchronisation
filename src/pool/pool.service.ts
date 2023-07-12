@@ -36,9 +36,11 @@ export class PoolService {
         }));
     }
 
-    async createPools(data: Prisma.PoolCreateInput[]): Promise<{ count: number }> {
-        return this.prisma.pool.createMany({
-          data,
+    async upsertPool(pool: Prisma.PoolCreateInput): Promise<any> {
+        return this.prisma.pool.upsert({
+          where: { pool: pool.pool },
+          update: pool,
+          create: pool,
         });
       }
 }
