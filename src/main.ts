@@ -10,9 +10,10 @@ async function bootstrap() {
   poolService.fetch().pipe().subscribe(async (pools: IPool[]) => {
     try {
       await poolService.createPools(pools);
-    } catch(e) {
-      console.log(e)
+    } catch(err) {
+      console.log(err)
     }
-  });
+  }, 
+  err => console.log(err));
 }
 bootstrap();
