@@ -46,21 +46,23 @@ export class PoolService {
               }
             `
     }).pipe(map((response: AxiosResponse<{ data: { pools: IPoolResponse[] } }>) => {
-      return response.data.data.pools.map(pool => {
-        return {
-          pool: pool.id,
-          token0: pool.token0.id,
-          token1: pool.token1.id
-        }
-      })
+      return response.data.data.pools.map(this.mapPool)
     }))
   }
 
-  async upsertPool (pool: Prisma.PoolCreateInput): Promise<any> {
+  async upsertPool (pool: IPool): Promise<any> {
     return await this.prisma.pool.upsert({
       where: { pool: pool.pool },
       update: pool,
       create: pool
     })
+  }
+
+  mapPool (pool: IPoolResponse): IPool {
+    return {
+      pool: pool.id,
+      token0: pool.token0.id,
+      token1: pool.token1.id
+    }
   }
 }
