@@ -9,6 +9,6 @@ datasource db {
 
 model Pool {
   pool String  @unique @id
-  token0 String  @unique
-  token1 String  @unique
+  token0 String
+  token1 String
 }

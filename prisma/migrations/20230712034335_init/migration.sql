@@ -9,9 +9,3 @@ CREATE TABLE "Pool" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Pool_pool_key" ON "Pool"("pool");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Pool_token0_key" ON "Pool"("token0");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Pool_token1_key" ON "Pool"("token1");
