@@ -6,7 +6,7 @@ import { type Observable, map } from 'rxjs'
 import { type AxiosResponse } from 'axios'
 import { type IPoolResponse } from 'src/interfaces/pool.interface'
 import { PrismaService } from 'src/prisma.service'
-import { type IPool } from '../interfaces/pool.interface'
+import { type IPool } from 'src/interfaces/pool.interface'
 import { UNISWAP_V3_URL } from 'src/constants'
 
 @Injectable()
