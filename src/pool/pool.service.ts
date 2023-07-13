@@ -15,7 +15,7 @@ export class PoolService {
 
   constructor (private readonly httpService: HttpService, private readonly prisma: PrismaService) {}
 
-  @Cron(CronExpression.EVERY_10_SECONDS)
+  @Cron(CronExpression.EVERY_30_MINUTES)
   async handleCron (): Promise<void> {
     this.fetch().subscribe({
       next: async (pools: IPool[]) => {
